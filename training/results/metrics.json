@@ -1,0 +1,49 @@
+{
+  "classes": [
+    "background",
+    "drone",
+    "speech",
+    "vehicle"
+  ],
+  "files_per_class": {
+    "background": {
+      "test": 225,
+      "val": 225,
+      "train": 1050
+    },
+    "drone": {
+      "test": 200,
+      "val": 200,
+      "train": 933
+    },
+    "speech": {
+      "test": 42,
+      "val": 42,
+      "train": 196
+    },
+    "vehicle": {
+      "test": 48,
+      "val": 48,
+      "train": 224
+    }
+  },
+  "windows": {
+    "train": 29103,
+    "val": 2009,
+    "test": 2034
+  },
+  "params": 7812,
+  "int8_model_bytes": 24880,
+  "float_test": {
+    "accuracy": 0.7522123893805309,
+    "drone_recall_at_0.8": 0.925,
+    "false_alarm_rate_at_0.8": 0.0021810250817884407,
+    "test_windows": 2034
+  },
+  "int8_test": {
+    "accuracy": 0.7531956735496559,
+    "drone_recall_at_0.8": 0.915,
+    "false_alarm_rate_at_0.8": 0.0021810250817884407,
+    "test_windows": 2034
+  }
+}

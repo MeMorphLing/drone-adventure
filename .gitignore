@@ -1,0 +1,9 @@
+.pio/
+.vscode/
+__pycache__/
+gateway/src/secrets.h
+training/data/
+training/downloads/
+training/*.wav
+*.zip
+tools/test_logmel
