@@ -149,3 +149,20 @@ Put the channel ID and Write API key in `secrets.h`. For email alerts, add **Rea
 - The gateway's HTTPS client skips certificate checks (`setInsecure`). Pin the ThingSpeak root CA before any real deployment.
 - ESP-NOW range is far shorter than LoRa's, and a node that is always listening on Wi-Fi draws more current than a LoRa node, so battery life is shorter than the original design's estimate.
 - Many relay boards switch on with a LOW input. Check `RELAY_ACTIVE` in `gateway/src/config.h` against your board before connecting the siren.
+
+
+## Results
+
+int8 model on the held-out test set (2,034 one-second windows):
+
+| Metric | Value |
+|---|---|
+| Overall accuracy | 75.3% |
+| Drone recall | 95.0% (190 / 200) |
+| Drone precision | 79.5% |
+| Model size | about 48 KB int8 |
+| Inference on ESP32-S3 | about 1.46 s per window |
+
+![Confusion matrix](training/results/confusion_matrix.png)
+
+Rows are true classes, columns are predicted classes. Most errors are between background, speech and vehicle, which do not trigger the drone alarm. The alarm needs P(drone) >= 0.8 in 3 of 4 windows.
